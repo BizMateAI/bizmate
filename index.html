@@ -1,101 +1,293 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BizMate — Local Growth for Small Businesses</title>
-  <meta name="description" content="BizMate helps small businesses get found online: Google Business Profile, reviews, simple social & booking setup. Book a 15-min demo." />
-  <meta name="keywords" content="local SEO, Google Business Profile, small business marketing, Regina, Humboldt, BizMate" />
-  <meta property="og:title" content="BizMate — Local Growth for Small Businesses" />
-  <meta property="og:description" content="Get more walk-ins, calls and bookings. Done-for-you Google Business Profile, reviews and social posts." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.bizmte.com/" />
-  <meta property="og:image" content="" />
-  <link rel="icon" href="data:,"><!-- blank favicon to avoid 404 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BizMate — Systems Built for Infinite Growth | AI-driven SMB Growth Systems</title>
+  <meta name="description" content="BizMate helps small businesses scale with AI-driven systems, automated workflows, and measurable ROI. Book a free 30-minute consultation at growth@bizmte.com.">
+  <meta name="keywords" content="small business automation, business growth system, SMB growth, AI growth systems, workflow automation, BizMate">
+  <link rel="canonical" href="https://bizmte.com/">
+  <meta name="theme-color" content="#1E3A8A">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="BizMate">
+  <meta property="og:title" content="BizMate — Systems Built for Infinite Growth">
+  <meta property="og:description" content="AI-powered systems and workflow automation that help small businesses scale. Book a free 30-minute consultation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bizmte.com/">
+  <meta property="og:image" content="https://bizmte.com/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@BizMateAI">
+
   <style>
-    :root{--accent:#0f62fe;--muted:#6b7280;--bg:#f8fafc;--card:#ffffff}
+    :root{--bg:#F9FAFB;--primary:#1E3A8A;--accent:#10B981;--muted:#6B7280;--card:#fff;--radius:14px;--glass:rgba(255,255,255,0.7)}
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;background:var(--bg);color:#0f1724}
-    .wrap{max-width:980px;margin:36px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    h1{margin:0;font-size:28px}
-    p.lead{color:var(--muted);margin:8px 0 20px}
-    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,40,0.06)}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
-    .features{display:grid;gap:12px}
-    .feature{display:flex;gap:12px;align-items:flex-start}
-    .dot{width:42px;height:42px;border-radius:10px;background:#eef2ff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .cta{display:flex;flex-direction:column;gap:12px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;text-align:center}
-    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(15,98,254,0.12)}
-    footer{margin-top:28px;color:var(--muted);font-size:14px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}.logo{width:48px;height:48px}}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#FBFDFF, #F9FAFB);color:#0f172a;-webkit-font-smoothing:antialiased}
+    a{color:var(--primary)}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+    .brand{font-weight:800;color:var(--primary);font-size:18px}
+    nav{display:flex;gap:14px;align-items:center}
+    .nav-link{font-weight:600;color:var(--primary);text-decoration:none;padding:8px;border-radius:8px}
+    .hamburger{display:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-top:18px}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:#ECFDF5;color:#064E3B;font-weight:700;font-size:12px}
+    h1{font-size:34px;line-height:1.05;margin:12px 0}
+    .lead{color:var(--muted);font-size:16px}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .btn{background:var(--primary);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(6,8,25,0.06)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .feature h4{margin:8px 0 6px;font-size:16px}
+    .feature p{color:var(--muted);margin:0;font-size:14px}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .plan{border-radius:12px;padding:18px;text-align:center;border:1px solid #EEF2FF}
+    .plan.best{border:2px solid var(--accent);transform:translateY(-6px)}
+    .plan h3{margin:6px 0}
+    .price{font-size:22px;font-weight:800;color:var(--primary)}
+    .plan ul{list-style:none;padding:0;margin:12px 0;color:var(--muted);text-align:left}
+    .plan li{margin:8px 0}
+
+    /* Aside / form */
+    aside.card{position:sticky;top:18px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
+    label{font-weight:600;font-size:13px;color:#111}
+
+    /* testimonial */
+    .testimonial{background:linear-gradient(180deg,#fff,#fbfbff);padding:12px;border-radius:10px;margin-top:12px}
+
+    footer{margin-top:36px;padding:28px 0;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.features{grid-template-columns:1fr 1fr}.pricing{grid-template-columns:1fr}.hamburger{display:block}.nav{display:none}}
+    @media (max-width:480px){.brand{font-size:16px}h1{font-size:26px}.lead{font-size:15px}.logo img{width:40px;height:40px}}
+
+    /* accessibility focus */
+    a:focus,button:focus,input:focus{outline:3px solid rgba(16,185,129,0.15);outline-offset:2px}
   </style>
+
+  <!-- Structured data: Organization + SoftwareApplication + Offers -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"BizMate",
+    "url":"https://bizmte.com",
+    "logo":"https://bizmte.com/assets/logo.png",
+    "description":"AI-powered systems and workflow automation for small businesses. Plans: Bronze $300/mo, Silver $500/mo, Gold $1000/mo.",
+    "applicationCategory":"BusinessApplication",
+    "offers":{
+      "@type":"OfferCatalog",
+      "name":"BizMate Plans",
+      "itemListElement":[
+        {"@type":"Offer","name":"Bronze","price":"300","priceCurrency":"USD","description":"Starter workflows, basic reports, 1 integration"},
+        {"@type":"Offer","name":"Silver","price":"500","priceCurrency":"USD","description":"Advanced templates, AI insights, 5 integrations"},
+        {"@type":"Offer","name":"Gold","price":"1000","priceCurrency":"USD","description":"Enterprise features, priority support, custom onboarding"}
+      ]
+    },
+    "publisher":{"@type":"Organization","name":"BizMate","url":"https://bizmte.com"}
+  }
+  </script>
+
+  <!-- Founder numerology snippet for trust (subtle) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Parita Amin","jobTitle":"Founder & CEO","description":"Founder Parita Amin (Life Path 22, Master Builder) — building systems that scale SMBs globally.","sameAs":["https://www.linkedin.com/in/parita-amin"]}
+  </script>
+
 </head>
 <body>
-  <div class="wrap">
+  <div class="container" role="main">
     <header>
-      <div class="brand">
-        <div class="logo">BM</div>
+      <div class="logo" aria-label="BizMate home">
+        <img src="/assets/logo.png" alt="BizMate logo">
         <div>
-          <h1>BizMate</h1>
-          <div style="font-size:13px;color:var(--muted)">Done-for-you local growth for small businesses</div>
+          <div class="brand">BizMate</div>
+          <div style="font-size:12px;color:var(--muted)">Systems Built for Infinite Growth</div>
         </div>
       </div>
-      <nav>
-        <a class="btn" href="https://calendly.com/yourlink" target="_blank">Book 15-min demo</a>
-      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#how">How</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="#contact">Consult</a>
+        </nav>
+        <a class="btn" href="#contact">Book free consult</a>
+        <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      </div>
     </header>
 
-    <main style="margin-top:22px">
-      <div class="grid">
-        <section>
+    <main class="hero" aria-labelledby="hero-heading">
+      <section>
+        <span class="kicker">AI • Automation • ROI</span>
+        <h1 id="hero-heading">AI-powered systems that automate growth for local businesses</h1>
+        <p class="lead">BizMate helps small businesses eliminate busywork, increase repeat revenue, and scale predictably through automated workflows, AI-driven recommendations, and measurable ROI.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#contact">Book your free 30-min consult</a>
+          <a class="btn ghost" href="/docs/demo.html">Watch short demo</a>
+          <a class="btn" href="mailto:growth@bizmte.com">Email growth@bizmte.com</a>
+        </div>
+
+        <div class="features" id="features" aria-label="Features">
+          <div class="card feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20" stroke="#1E3A8A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <h4>Automated Workflows</h4>
+            <p>Create repeatable systems — onboarding, invoicing, follow-ups — that run on autopilot.</p>
+          </div>
+
+          <div class="card feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1E3A8A" stroke-width="1.6"/></svg>
+            <h4>AI Insights & ROI</h4>
+            <p>Actionable AI recommendations that show where to cut costs and where to invest for maximum return.</p>
+          </div>
+
+          <div class="card feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#1E3A8A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <h4>Integrations</h4>
+            <p>Connect payments, calendar, CRM, and marketing tools with plug-and-play integrations.</p>
+          </div>
+        </div>
+
+        <section id="how" style="margin-top:28px">
           <div class="card">
-            <p class="lead">We help cafes, salons, auto shops and local retailers get found on Google, collect reviews, and turn searches into customers — quickly and affordably.</p>
-
-            <div class="features">
-              <div class="feature"><div class="dot">1</div><div><strong>Google Business Profile</strong><div style="color:var(--muted)">Claim, optimize, photos, services, booking link</div></div></div>
-              <div class="feature"><div class="dot">2</div><div><strong>Reviews & Reputation</strong><div style="color:var(--muted)">Automated review requests and response templates</div></div></div>
-              <div class="feature"><div class="dot">3</div><div><strong>Social & Local Posts</strong><div style="color:var(--muted)">4 monthly posts, simple promotions, update photos</div></div></div>
-              <div class="feature"><div class="dot">4</div><div><strong>Booking & Ordering</strong><div style="color:var(--muted)">Set up simple booking or order links (no heavy dev)</div></div></div>
-            </div>
-
-            <h3 style="margin-top:18px">Starter Pricing</h3>
-            <ul style="color:var(--muted);margin-top:6px">
-              <li><strong>Silver</strong> — $500/mo: GBP + 4 posts + review flow</li>
-              <li><strong>Bronze</strong> — $300/mo: GBP basics + 1 post</li>
-            </ul>
-
-            <p style="margin-top:12px;color:var(--muted)">No contracts. 30-day rolling. Book a free demo and I’ll show a quick audit that proves next steps.</p>
+            <h3>How it works</h3>
+            <ol>
+              <li>Connect tools (Stripe, Calendly, QuickBooks)</li>
+              <li>Choose a growth template (local leads, repeat sales, retention)</li>
+              <li>Activate AI automations & monitor ROI dashboards</li>
+            </ol>
+            <p style="color:var(--muted);margin-top:8px">We focus on measurable wins in 30–90 days — not just features.</p>
           </div>
         </section>
 
-        <aside>
-          <div class="card cta">
-            <div style="font-size:14px;color:var(--muted)">Free demo — 15 minutes</div>
-            <a class="btn" href="https://calendly.com/yourlink" target="_blank">Book 15-min demo</a>
-            <a class="btn ghost" href="mailto:info@bizmte.com">Email: info@bizmte.com</a>
-
-            <div style="margin-top:8px;border-top:1px solid #eef2f5;padding-top:12px;font-size:13px;color:var(--muted)">
-              <strong>Quick audit includes:</strong>
-              <ul style="margin:8px 0 0 18px;color:var(--muted)">
-                <li>Google Maps visibility check</li>
-                <li>Review & photo audit</li>
-                <li>1 immediate fix suggestion</li>
-              </ul>
+        <section style="margin-top:22px">
+          <div class="card">
+            <h3>Trusted locally, built for global scale</h3>
+            <p style="color:var(--muted)">"BizMate helped us automate bookings and customer follow-ups — revenue up 42% in 4 months."</p>
+            <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+              <img src="/assets/client1.png" alt="Client logo" style="height:36px;border-radius:6px;object-fit:cover">
+              <div style="font-weight:700">Local Bakery, Regina</div>
             </div>
           </div>
+        </section>
 
-          <div style="margin-top:12px;color:var(--muted);font-size:13px">Follow: <a href="#">@bizmate</a></div>
-        </aside>
-      </div>
+      </section>
+
+      <aside class="card" aria-labelledby="contact">
+        <h3 id="contact">Book a free 30-minute consultation</h3>
+        <p style="color:var(--muted);font-size:14px">Complete the form and we'll contact you from <strong>growth@bizmte.com</strong>. All messages forward to our team inbox.</p>
+
+        <form id="consult-form" action="https://formspree.io/f/YOuR_FORM_ID" method="POST" novalidate>
+          <div style="margin-bottom:8px"><label for="name">Full name</label><input id="name" name="name" required></div>
+          <div style="margin-bottom:8px"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+          <div style="margin-bottom:8px"><label for="phone">Phone (optional)</label><input id="phone" name="phone"></div>
+          <div style="margin-bottom:8px"><label for="message">Tell us about your business</label><textarea id="message" name="message" rows="4"></textarea></div>
+
+          <input type="hidden" name="_subject" value="New consult request">
+          <input type="hidden" name="to" value="growth@bizmte.com">
+          <button class="btn" type="submit">Request consult</button>
+        </form>
+
+        <div class="testimonial" style="margin-top:12px">
+          <strong>Quick note:</strong> Responses within 24 hours. Prefer calls? Add your number above and we'll text or call to schedule.
+        </div>
+      </aside>
     </main>
 
+    <section id="pricing" style="margin-top:28px">
+      <h2>Plans designed for predictable growth</h2>
+      <p style="color:var(--muted)">Choose the package that fits your stage. Everything includes automated workflows, reporting, and secure integrations.</p>
+
+      <div class="pricing" role="list">
+        <article class="plan" role="listitem" aria-label="Bronze plan">
+          <h3>Bronze</h3>
+          <div class="price">$300<span style="font-size:12px">/mo</span></div>
+          <p style="color:var(--muted)">Starter workflows · basic reports · 1 integration · Email support</p>
+          <ul>
+            <li>3 workflow templates</li>
+            <li>Monthly performance report</li>
+            <li>Standard SLAs</li>
+          </ul>
+          <a class="btn" href="#contact">Start Bronze</a>
+        </article>
+
+        <article class="plan best" role="listitem" aria-label="Silver plan">
+          <h3>Silver</h3>
+          <div class="price">$500<span style="font-size:12px">/mo</span></div>
+          <p style="color:var(--muted)">Advanced templates · AI insights · 5 integrations · Priority email</p>
+          <ul>
+            <li>10 workflow templates</li>
+            <li>Weekly performance dashboard</li>
+            <li>One-on-one onboarding session</li>
+          </ul>
+          <a class="btn" href="#contact">Start Silver</a>
+        </article>
+
+        <article class="plan" role="listitem" aria-label="Gold plan">
+          <h3>Gold</h3>
+          <div class="price">$1,000<span style="font-size:12px">/mo</span></div>
+          <p style="color:var(--muted)">Enterprise features · priority support · custom onboarding · Dedicated success manager</p>
+          <ul>
+            <li>Custom workflows</li>
+            <li>Daily KPI alerts</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <a class="btn" href="#contact">Start Gold</a>
+        </article>
+      </div>
+
+      <div style="margin-top:12px;color:var(--muted);font-size:13px">All plans billed monthly. Annual plans and custom enterprise pricing available — contact <a href="mailto:investors.bizmate@gmail.com">investors@bizmte.com</a> for partnerships or enterprise procurement.</div>
+    </section>
+
+    <section style="margin-top:28px">
+      <div class="card">
+        <h3>About the founder</h3>
+        <p style="color:var(--muted)"><strong>Parita Amin</strong> — Founder &amp; CEO. Life Path 22 (Master Builder). Parita combines system-thinking, product design, and growth marketing to build sustainable, high-ROI systems for SMBs. Her approach blends disciplined infrastructure with storytelling to attract customers and investors.</p>
+      </div>
+    </section>
+
     <footer>
-      © BizMate — Built for small biz. Regina → Humboldt. Built with ❤️.
+      <div>
+        <div style="font-weight:800;color:var(--primary)">BizMate</div>
+        <div style="color:var(--muted);font-size:13px">Systems Built for Infinite Growth • Regina, SK</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;color:var(--muted)">Email: <a href="mailto:growth@bizmte.com">growth@bizmte.com</a></div>
+        <div style="margin-top:6px"><a href="https://github.com/BizMateAI">GitHub</a> • <a href="https://twitter.com/BizMateAI">Twitter</a></div>
+      </div>
     </footer>
+
   </div>
+
+  <script>
+    // Accessible mobile nav toggle
+    document.querySelectorAll('.hamburger').forEach(btn=>btn.addEventListener('click',()=>{
+      const nav=document.querySelector('.nav'); if(nav) nav.classList.toggle('open');
+    }));
+
+    // Simple form UX: client-side validation + send via Formspree
+    const form=document.getElementById('consult-form');
+    if(form){
+      form.addEventListener('submit',e=>{
+        // basic validation
+        const email=form.email.value.trim(); const name=form.name.value.trim();
+        if(!name||!email){e.preventDefault(); alert('Please enter your name and email so we can confirm the consult.');}
+      })
+    }
+  </script>
 </body>
 </html>
