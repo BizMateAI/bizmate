@@ -12,4 +12,3 @@ To deploy:
 Replace placeholders:
 - Update Formspree ID in the form action or swap to your backend/email provider.
 - Replace /assets/logo.svg and /assets/og-image.png with final assets.
-- Add analytics (GA4) or tag manager as needed.
