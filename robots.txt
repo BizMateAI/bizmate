@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bizmte.com/sitemap.xml
