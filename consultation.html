@@ -1,228 +1,57 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Book Consultation — BizMate</title>
-  <meta name="description" content="Book a free 30-minute consultation with BizMate. Fill the form or schedule directly on our calendar. Email: growth@bizmte.com" />
-  <link rel="canonical" href="https://www.bizmte.com/consultation.html" />
-  <meta property="og:title" content="Book Consultation — BizMate" />
-  <meta property="og:description" content="Book a free 30-minute consultation with BizMate." />
-  <meta property="og:url" content="https://www.bizmte.com/consultation.html" />
-  <meta property="og:image" content="/assets/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+</div>
+</main>
 
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCW489P0WR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GCW489P0WR');
-  </script>
 
-  <!-- Core styles (shared styles.css) -->
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    /* small local overrides for the consultation page */
-    .consult-wrap{max-width:980px;margin:18px auto;padding:18px}
-    .consult-grid{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
-    @media (max-width:960px){.consult-grid{grid-template-columns:1fr}}
-    .note{color:var(--muted);font-size:14px;margin-bottom:12px}
-    #calendlyInline{min-width:280px;height:650px;border-radius:10px;overflow:hidden;border:1px solid #eef6ff}
-    .success{background:#effaf6;border:1px solid #d1f0e2;padding:12px;border-radius:10px;color:#064b36;margin-top:12px}
-    .error{background:#fff4f4;border:1px solid #ffd4d6;padding:12px;border-radius:10px;color:#6b0b0b;margin-top:12px}
-    label{font-weight:700;margin-bottom:6px;display:block}
-  </style>
-</head>
-<body>
-  <div class="container consult-wrap" role="main">
-    <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-      <div class="brand" style="display:flex;gap:12px;align-items:center">
-        <div class="logo" aria-hidden="true">BM</div>
-        <div>
-          <h1 style="margin:0;font-size:20px">BizMate</h1>
-          <div class="small" style="color:var(--muted)">Systems Built for Infinite Growth</div>
-        </div>
-      </div>
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span class="bar"></span>
-      </button>
-      <nav aria-label="Top">
-        <a href="/" style="margin-right:10px">Home</a>
-        <a href="/pricing.html" style="margin-right:10px">Pricing</a>
-        <a href="/features.html">Features</a>
-      </nav>
-    </header>
+<footer class="container">
+<div>© BizMate — Regina, SK</div>
+</footer>
 
-    <main>
-      <h2>Book your free 30-minute consultation</h2>
-      <p class="note">Complete the short form and we will contact you from <strong>growth@bizmte.com</strong> to schedule the consultation. Prefer to pick a time? Use the calendar on the right.</p>
 
-      <div class="consult-grid" aria-live="polite">
-        <!-- Form column -->
-        <div>
-          <form id="consultForm" novalidate>
-            <div class="field">
-              <label for="name">Full name <span aria-hidden="true">*</span></label>
-              <input id="name" name="name" required aria-required="true" placeholder="Jane Doe" />
-            </div>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-            <div class="field">
-              <label for="email">Email <span aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com" />
-            </div>
 
-            <div class="field">
-              <label for="phone">Phone (optional)</label>
-              <input id="phone" name="phone" type="tel" placeholder="+1 (306) 555-0100" />
-            </div>
+<script src="/site.js" defer></script>
+<script>
+// Page-specific JS: AJAX Formspree submit + Calendly init
+(function(){
+const BIZ={FORMSPREE:'https://formspree.io/f/xgvnylea',CALENDLY:'https://calendly.com/bizmate-growth/30-minute-consultation',EMAIL:'growth@bizmte.com'};
 
-            <div class="field">
-              <label for="plan">Select plan</label>
-              <select id="plan" name="plan" aria-label="Select plan">
-                <option value="bronze">Bronze — $300/mo</option>
-                <option value="silver">Silver — $500/mo</option>
-                <option value="gold">Gold — $1000/mo</option>
-              </select>
-            </div>
 
-            <div class="field">
-              <label for="message">Briefly describe your business</label>
-              <textarea id="message" name="message" rows="4" placeholder="A short summary — location, industry, goal..."></textarea>
-            </div>
+// Calendly inline
+function initCalendly(){ try{ if(window.Calendly && document.getElementById('calendlyInline').children.length===0){Calendly.initInlineWidget({url:BIZ.CALENDLY,parentElement:document.getElementById('calendlyInline')});}}catch(e){console.warn(e);} }
+if(window.Calendly) initCalendly(); else window.addEventListener('load', initCalendly);
+document.getElementById('openCalendlyPopup')?.addEventListener('click', function(e){e.preventDefault(); if(window.Calendly){Calendly.initPopupWidget({url:BIZ.CALENDLY}); if(window.gtag) gtag('event','open_calendly',{method:'popup'});} else window.open(BIZ.CALENDLY,'_blank');});
 
-            <!-- anti-bot field hidden -->
-            <input type="text" name="_gotcha" style="display:none" aria-hidden="true" />
 
-            <!-- Formspree metadata -->
-            <input type="hidden" name="_subject" value="New consultation request" />
-            <input type="hidden" id="toField" name="to" value="growth@bizmte.com" />
+// Mark this form as handled to prevent generic fallback
+window.BizMateSite = window.BizMateSite || {};
+window.BizMateSite.markFormHandled('consultForm');
 
-            <button class="submit" id="submitBtn" type="submit">Request consultation</button>
 
-            <div id="consultMsg" role="status" aria-live="polite" style="margin-top:12px"></div>
-          </form>
+// AJAX submit
+const form=document.getElementById('consultForm');
+const msg=document.getElementById('consultMsg');
+const btn=document.getElementById('submitBtn');
 
-          <p class="note" style="margin-top:8px">We will respond within one business day. For urgent enquiries call <strong>+1 (639) 382-0382</strong>.</p>
-        </div>
 
-        <!-- Calendly column -->
-        <aside>
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <div>
-              <h3 style="margin:0">Schedule directly</h3>
-              <div class="small" style="color:var(--muted)">Pick a slot on our calendar</div>
-            </div>
-            <div style="font-size:12px;color:var(--muted)">Local time: Saskatchewan (America/Regina)</div>
-          </div>
-
-          <div id="calendlyInline" aria-label="Calendly scheduler" style="margin-top:14px"></div>
-
-          <p style="margin-top:12px" class="note">Prefer popup: <a href="#" id="openCalendlyPopup">Open scheduler in a popup</a></p>
-        </aside>
-      </div>
-    </main>
-
-    <footer style="margin-top:18px">
-      <div>© BizMate — <span class="small">Regina, SK</span></div>
-      <div class="small"><a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
-    </footer>
-  </div>
-
-  <!-- Calendly CSS + JS (will load) -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-  <script>
-    // Configuration (keeps values in one place)
-    const BIZ = {
-      FORMSPREE: 'https://formspree.io/f/xgvnylea',
-      CALENDLY: 'https://calendly.com/bizmate-growth/30-minute-consultation',
-      EMAIL: 'growth@bizmte.com',
-      PHONE: '+1 (639) 382-0382'
-    };
-
-    // Initialize Calendly inline widget when script available
-    function initCalendlyOnce() {
-      try {
-        if (window.Calendly && document.getElementById('calendlyInline').children.length === 0) {
-          Calendly.initInlineWidget({ url: BIZ.CALENDLY, parentElement: document.getElementById('calendlyInline') });
-        }
-      } catch (err) {
-        console.warn('Calendly init error', err);
-      }
-    }
-    // If Calendly loaded already
-    if (window.Calendly) initCalendlyOnce();
-    // Otherwise try when window loads
-    window.addEventListener('load', initCalendlyOnce);
-
-    // Popup link
-    document.getElementById('openCalendlyPopup')?.addEventListener('click', function(e){
-      e.preventDefault();
-      if (window.Calendly) {
-        Calendly.initPopupWidget({ url: BIZ.CALENDLY });
-        if (window.gtag) gtag('event', 'open_calendly', { method: 'popup' });
-      } else {
-        // fallback: open Calendly page
-        window.open(BIZ.CALENDLY, '_blank', 'noopener');
-      }
-    });
-
-    // Formspree AJAX submit handler
-    (function(){
-      const form = document.getElementById('consultForm');
-      const msg = document.getElementById('consultMsg');
-      const submitBtn = document.getElementById('submitBtn');
-
-      if (!form) return;
-
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        msg.innerHTML = ''; // reset
-        // basic validation
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        if (!name || !email) {
-          msg.innerHTML = '<div class="error">Please provide your name and email.</div>';
-          return;
-        }
-
-        // disable button
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-
-        // ensure the 'to' hidden field is set to current email
-        document.getElementById('toField').value = BIZ.EMAIL;
-
-        const fd = new FormData(form);
-
-        try {
-          const res = await fetch(BIZ.FORMSPREE, {
-            method: 'POST',
-            body: fd,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (res.ok) {
-            msg.innerHTML = '<div class="success">Thanks — message sent. We will contact you shortly to schedule the consultation.</div>';
-            form.reset();
-            if (window.gtag) gtag('event', 'contact_form_submit', { method: 'formspree' });
-          } else {
-            const json = await res.json().catch(()=>null);
-            const error = json?.error || 'Submission failed — please try again later.';
-            msg.innerHTML = '<div class="error">' + error + '</div>';
-          }
-        } catch (err) {
-          console.error('Form submit error', err);
-          msg.innerHTML = '<div class="error">Network error — please try again.</div>';
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Request consultation';
-        }
-      });
-    })();
-  </script>
+form.addEventListener('submit', async function(e){
+e.preventDefault(); msg.innerHTML='';
+const name=form.name.value.trim(); const email=form.email.value.trim();
+if(!name||!email){ msg.innerHTML='<div class="error">Please provide your name and email.</div>'; return; }
+btn.disabled=true; btn.textContent='Sending…';
+// ensure 'to' value
+form.querySelector('input[name="to"]').value=BIZ.EMAIL;
+const fd=new FormData(form);
+try{
+const res=await fetch(BIZ.FORMSPREE,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+if(res.ok){ msg.innerHTML='<div class="success">Thanks — message sent. We will contact you shortly to schedule the consultation.</div>'; form.reset(); if(window.gtag) gtag('event','contact_form_submit',{method:'formspree'}); }
+else{ const json=await res.json().catch(()=>null); const error=json?.error||'Submission failed — please try again later.'; msg.innerHTML='<div class="error">'+error+'</div>'; }
+}catch(err){ console.error(err); msg.innerHTML='<div class="error">Network error — please try again.</div>'; }
+finally{ btn.disabled=false; btn.textContent='Request consultation'; }
+});
+})();
+</script>
 </body>
 </html>
