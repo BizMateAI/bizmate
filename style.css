@@ -1,0 +1,154 @@
+:root{
+  /* Updated color & scale */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #0f1724;
+  --brand: #0b4fc6;      /* slightly richer blue */
+  --accent: #0ea5a3;     /* teal accent (used in gradients) */
+  --glass: rgba(16,24,40,0.03);
+  --radius: 12px;
+  --container: 1200px;
+  --shadow: 0 12px 32px rgba(15,23,42,0.07);
+  --max-width-narrow: 980px;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:var(--text);
+  background: linear-gradient(180deg,#ffffff,#f6fbff);
+  line-height:1.55;
+  -webkit-text-size-adjust:100%;
+}
+
+/* Container */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:36px;
+}
+
+/* Header with hamburger support */
+.header-wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--brand),var(--accent));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+  font-family: "Space Grotesk", Inter, system-ui;
+  flex: 0 0 56px;
+}
+.brand h1{margin:0;font-size:18px}
+.brand p{margin:0;font-size:13px;color:var(--muted)}
+
+/* Nav - desktop */
+nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px;font-weight:600}
+nav a.active{color:var(--brand)}
+.cta-btn{background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+
+/* Hamburger button */
+.hamburger{
+  display:none;
+  width:44px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);
+  align-items:center;justify-content:center;cursor:pointer;
+}
+.hamburger .bar{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;position:relative}
+.hamburger .bar::before,
+.hamburger .bar::after{content:'';position:absolute;left:0;width:18px;height:2px;background:var(--text);border-radius:2px}
+.hamburger .bar::before{top:-6px}
+.hamburger .bar::after{top:6px}
+
+/* Mobile nav panel */
+.mobile-nav{
+  display:none;
+  position:fixed;top:0;right:0;height:100vh;width:290px;background:linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow:-12px 0 40px rgba(12,22,50,0.08);padding:28px;z-index:1500;
+}
+.mobile-nav a{display:block;padding:12px 0;color:var(--text);font-weight:700;border-bottom:1px solid #f1f6fb}
+.mobile-nav .close{display:block;text-align:right;margin-bottom:12px}
+
+/* Hero/layout — slightly bigger, more breathing room */
+.hero{display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:start;margin-top:36px}
+.hero-left{
+  padding:32px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  border-radius:16px;box-shadow:var(--shadow);border:1px solid #eef6ff;
+}
+.kicker{display:inline-block;padding:10px 14px;border-radius:999px;background:var(--glass);color:var(--brand);font-weight:800;font-size:13px;letter-spacing:0.2px}
+.headline{font-family:"Space Grotesk",Inter;font-size:38px;margin:18px 0 12px;line-height:1.02}
+.sub{color:var(--muted);font-size:17px;margin-bottom:20px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.primary{background:linear-gradient(90deg,var(--brand),var(--accent));color:#021}
+.btn.secondary{background:transparent;border:1px solid #e6eef6;color:var(--brand)}
+
+/* Tiles and panels */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.feature{background:white;padding:18px;border-radius:12px;border:1px solid #f1f6fb;box-shadow:0 8px 20px rgba(12,22,50,0.03)}
+.feature h4{margin:8px 0;color:var(--text)}
+.feature p{margin:0;color:var(--muted)}
+
+.panel{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:20px;border-radius:12px;border:1px solid #eef6ff;box-shadow:var(--shadow)}
+.pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#f1fbf6;color:#05603b;font-weight:700;margin-right:8px}
+
+/* Pricing */
+.pricing{margin-top:28px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+.plan{background:white;padding:20px;border-radius:12px;border:1px solid #eef6ff;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.plan .title{font-weight:800}
+.plan .price{font-size:28px;font-weight:800;color:var(--brand)}
+.plan ul{color:var(--muted);margin-top:12px;padding-left:18px}
+
+/* Testimonials */
+.testimonials{margin-top:22px;display:flex;gap:12px}
+.testimonial{background:#fbfeff;padding:14px;border-radius:10px;border:1px solid #eef9ff;color:var(--text);flex:1}
+
+/* FAQ / blocks */
+.faq{margin-top:22px}
+.faq-item{background:white;padding:14px;border-radius:10px;border:1px solid #f1f6fb;margin-bottom:8px}
+
+/* Consultation form */
+.consult{margin-top:32px;background:white;padding:26px;border-radius:12px;border:1px solid #eef6ff;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;margin-bottom:12px}
+label{font-weight:700;margin-bottom:6px;color:var(--text)}
+input,textarea,select{padding:12px;border-radius:10px;border:1px solid #eef2f8;font-size:15px}
+input::placeholder, textarea::placeholder{color:#cbd5e1}
+.submit{background:linear-gradient(90deg,var(--brand),var(--accent));color:#021;padding:12px;border-radius:10px;border:none;font-weight:800;width:100%}
+
+/* Footer */
+footer{margin-top:40px;padding-top:18px;border-top:1px solid #eef6ff;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
+
+/* Small utilities */
+.small{font-size:13px;color:var(--muted)}
+.center{text-align:center}
+.hidden{display:none}
+
+/* Calendly inline container sizing */
+#calendlyInline, #calendly-embed{min-width:280px;height:650px;border-radius:12px;overflow:hidden;border:1px solid #eef6ff}
+
+/* Responsive & hamburger behavior */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .testimonials{flex-direction:column}
+  .panel{order:2}
+  .container{padding:20px}
+  /* show hamburger, hide desktop nav */
+  .hamburger{display:flex}
+  nav{display:none}
+  .mobile-nav{display:none} /* toggled via JS */
+}
+@media (max-width:600px){
+  .headline{font-size:28px}
+  .logo{width:48px;height:48px}
+  .features{grid-template-columns:1fr}
+}
