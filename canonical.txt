@@ -1,3 +1,0 @@
-If you create additional pages later (e.g., /pricing, /demo), put a page-specific canonical tag like:
-
-<link rel="canonical" href="https://www.bizmte.com/pricing">
