@@ -1,309 +1,60 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BizMate — Systems Built for Infinite Growth</title>
-  <meta name="description" content="BizMate builds AI-first, plug-and-play growth systems and automated workflows so small businesses can scale predictably. Book a free 30-minute consultation: growth@bizmte.com" />
-  <meta name="keywords" content="BizMate, small business automation, SMB growth, AI workflows, consultation" />
-  <link rel="canonical" href="https://bizmte.com/" />
-  <meta property="og:title" content="BizMate — Systems Built for Infinite Growth" />
-  <meta property="og:description" content="AI-first growth systems and automated workflows for small businesses. Bronze $300/mo • Silver $500/mo • Gold $1,000/mo." />
-  <meta property="og:image" content="/assets/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@BizMateAI" />
+<body>
+<div class="container">
+<!-- header (shared) -->
+<header>
+<div class="brand"><div class="logo">BM</div><div><h1>BizMate</h1><p>Systems Built for Infinite Growth</p></div></div>
+<button class="hamburger" aria-label="Open menu" aria-expanded="false">
+<span class="bar"></span>
+</button>
+<nav>
+<a href="/">Home</a>
+<a href="/features.html">Features</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/faq.html">FAQ</a>
+<a class="cta-btn" href="/consultation.html">Book consultation</a>
+</nav>
+</header>
 
-  <link rel="canonical" href="https://www.bizmte.com/">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCW489P0WR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<main>
+<section class="hero">
+<div class="hero-left">
+<div class="kicker">AI • Automation • ROI</div>
+<h1 class="headline">Enterprise-grade systems, built for small businesses</h1>
+<p class="sub">BizMate combines AI-driven recommendations, plug-and-play integrations, and repeatable workflows so local businesses can scale predictably without adding headcount.</p>
+<div class="hero-actions">
+<a class="btn primary" href="/consultation.html">Book your free 30‑minute consultation</a>
+<a class="btn secondary" href="mailto:growth@bizmte.com">Email growth@bizmte.com</a>
+</div>
 
-   // Optional for debugging while testing: uncomment next line
-   // gtag('set', {'debug_mode': true});
 
-    gtag('config', 'G-GCW489P0WR', {
-    'send_page_view': true
-  });
-  </script>
+<div class="features">
+<div class="feature"><h4>Prebuilt growth playbooks</h4><p>Launch lead capture, onboarding, and retention flows — live in days.</p></div>
+<div class="feature"><h4>AI recommendations</h4><p>Prioritized actions that drive revenue and reduce churn.</p></div>
+<div class="feature"><h4>One-click integrations</h4><p>Stripe, QuickBooks, Calendly, Google Sheets and CRMs — no dev work required.</p></div>
+</div>
+</div>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* CSS Variables and theme system for Stripe / Notion / Minimal variants */
-    :root{
-      --bg:#0f1724; --panel:#071427; --muted:#9aa4b2; --text:#e6eef8;
-      --accent-1:#4361ee; --accent-2:#06b6d4; --accent-3:#10b981;
-      --radius:14px; --container:1100px; --shadow:0 14px 40px rgba(2,6,23,0.45);
-      --gap:22px;
-    }
-    /* LIGHT (Stripe-like) theme variables */
-    .theme-stripe{
-      --bg:#ffffff; --panel:#ffffff; --muted:#6b7280; --text:#0f1724;
-      --accent-1:#635bff; --accent-2:#06b6d4; --accent-3:#10b981;
-      --shadow:0 12px 30px rgba(15,23,42,0.06);
-    }
-    /* NOTION-like ultra-minimal theme */
-    .theme-notion{
-      --bg:#ffffff; --panel:#ffffff; --muted:#63666a; --text:#0b0b0b;
-      --accent-1:#111827; --accent-2:#111827; --accent-3:#111827;
-      --shadow:0 8px 24px rgba(2,6,23,0.04);
-    }
-    /* MINIMAL dark modern theme */
-    .theme-dark{
-      --bg:#071427; --panel:#061226; --muted:#9aa4b2; --text:#e6eef8;
-      --accent-1:#06b6d4; --accent-2:#10b981; --accent-3:#7c3aed;
-      --shadow:0 18px 50px rgba(2,6,23,0.55);
-    }
+<aside class="panel">
+<h3>Quick summary</h3>
+<p>Choose a plan or request custom onboarding — measurable ROI in 30–90 days.</p>
+<div class="pill-list"><span class="pill">Bronze • $300/mo</span><span class="pill">Silver • $500/mo</span><span class="pill">Gold • $1,000/mo</span></div>
+<a class="btn primary" href="/consultation.html">Request a consultation</a>
+<div class="contact">Or call: <strong>+1 (639) 382-0382</strong></div>
+</aside>
+</section>
+</main>
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,Arial;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    .wrap{max-width:var(--container);margin:0 auto;padding:36px;display:flex;flex-direction:column;gap:var(--gap)}
 
-    /* Top bar */
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#021;font-weight:800;font-size:18px}
-    .brand h1{margin:0;font-size:18px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-    nav{display:flex;gap:12px;align-items:center}
-    .nav a{color:var(--muted);font-weight:600;padding:8px;border-radius:8px;text-decoration:none}
-    .nav .cta{background:linear-gradient(90deg,var(--accent-1),var(--accent-3));color:#021;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none}
+<footer>
+<div>© BizMate — Systems Built for Infinite Growth</div>
+<div class="small">Regina, SK • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
+</footer>
+</div>
 
-    /* Theme switcher */
-    .theme-switch{display:flex;gap:8px;align-items:center}
-    .theme-item{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.03);cursor:pointer;color:var(--muted);font-weight:600;font-size:13px}
-    .theme-item.active{box-shadow:var(--shadow);background:linear-gradient(90deg,var(--accent-1),var(--accent-3));color:#021}
 
-    /* Hero layout */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-top:10px}
-    .hero .left{padding:28px;border-radius:14px;background:var(--panel);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.02)}
-    .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--accent-3);font-weight:700;font-size:13px}
-    .title{font-size:34px;line-height:1.04;margin:12px 0;font-weight:700;font-family:Inter,system-ui}
-    .subtitle{color:var(--muted);font-size:16px;margin-bottom:18px}
-
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:12px 16px;border-radius:12px;font-weight:800;border:none;cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#021}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-
-    /* Lottie / visual box */
-    .visual{display:flex;align-items:center;justify-content:center;height:220px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-
-    /* features & pricing */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-    .feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .feature h4{margin:6px 0 8px}
-    .feature p{margin:0;color:var(--muted)}
-
-    .pricing{margin-top:26px}
-    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
-    .plan{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;justify-content:space-between}
-    .plan .name{font-weight:800}
-    .plan .price{font-size:28px;font-weight:800;margin-top:6px;color:var(--text)}
-    .plan ul{color:var(--muted);margin-top:12px;padding-left:18px}
-    .plan .select{margin-top:12px}
-
-    /* testimonials, faq */
-    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-    .testimonial{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-
-    .faq{margin-top:20px}
-    .faq-item{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;margin-bottom:8px}
-
-    /* consultation form at bottom */
-    .consult{margin-top:30px;padding:22px;border-radius:12px;background:linear-gradient(180deg,#061226,#041427);border:1px solid rgba(255,255,255,0.04)}
-    .consult h2{margin:0 0 8px}
-    .field{display:flex;flex-direction:column;margin-bottom:12px}
-    label{font-size:13px;color:var(--muted);margin-bottom:6px}
-    input,textarea,select{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
-    .submit{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#021;padding:12px;border-radius:10px;border:none;font-weight:800;width:100%}
-
-    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
-
-    /* responsive */
-    @media (max-width:1080px){
-      .hero{grid-template-columns:1fr}
-      .features{grid-template-columns:1fr 1fr}
-      .pricing-grid{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-    }
-    @media (max-width:520px){.title{font-size:26px}.logo{width:48px;height:48px}}
-
-    /* small interactions */
-    .btn.primary:hover,.submit:hover{transform:translateY(-3px);transition:all .18s}
-  </style>
-</head>
-<body class="theme-stripe">
-  <div class="wrap" role="document">
-    <header>
-      <div class="brand" aria-label="BizMate">
-        <div class="logo" aria-hidden>BM</div>
-        <div>
-          <h1>BizMate</h1>
-          <p>Systems Built for Infinite Growth</p>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:12px">
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <a class="cta" href="#consultation"><span class="nav-cta btn cta">Book consultation</span></a>
-        </nav>
-
-        <div class="theme-switch" style="margin-left:14px" aria-hidden>
-          <div class="theme-item active" data-theme="theme-stripe">Stripe</div>
-          <div class="theme-item" data-theme="theme-notion">Notion</div>
-          <div class="theme-item" data-theme="theme-dark">Minimal</div>
-        </div>
-      </div>
-    </header>
-
-    <main class="hero" role="main">
-      <section class="left">
-        <div class="kicker">AI • Automation • ROI</div>
-        <h2 class="title">Enterprise-grade systems, built for small businesses</h2>
-        <p class="subtitle">BizMate combines prebuilt playbooks, AI-driven recommendations, and secure integrations to automate operations and grow revenue predictably.</p>
-
-        <div class="hero-ctas">
-          <button class="btn primary" onclick="document.getElementById('consultation').scrollIntoView({behavior:'smooth'})">Book your free 30‑minute consultation</button>
-          <a class="btn ghost" href="mailto:growth@bizmte.com">Email growth@bizmte.com</a>
-        </div>
-
-        <div class="features" id="features" aria-label="Key features">
-          <div class="feature"><h4>Prebuilt playbooks</h4><p>Lead capture, onboarding, retention — deploy in days.</p></div>
-          <div class="feature"><h4>AI recommendations</h4><p>Prioritized actions that improve margins and retention.</p></div>
-          <div class="feature"><h4>One-click integrations</h4><p>Stripe, QuickBooks, Calendly, Google Sheets, CRMs — no dev required.</p></div>
-        </div>
-
-        <div class="testimonials" aria-hidden>
-          <div class="testimonial"><strong>“BizMate increased our MRR by 42% in 4 months.”</strong><div style="color:var(--muted);margin-top:8px">— Local Bakery, Regina</div></div>
-        </div>
-      </section>
-
-      <aside class="panel" aria-labelledby="panel-heading">
-        <h3 id="panel-heading">Quick summary</h3>
-        <p style="color:var(--muted)">Choose a plan or request custom onboarding — measurable ROI in 30–90 days.</p>
-        <div class="meta" aria-hidden style="margin-top:12px">
-          <span class="pill">Bronze • $300/mo</span>
-          <span class="pill">Silver • $500/mo</span>
-          <span class="pill">Gold • $1,000/mo</span>
-        </div>
-
-        <div style="margin-top:16px">
-          <div style="font-weight:700;margin-bottom:8px">Why BizMate?</div>
-          <div style="color:var(--muted)">Structured systems (4) + creative storytelling (3) + revenue-first focus (8) = scalable growth.</div>
-        </div>
-
-        <div style="margin-top:18px;text-align:center">
-          <a class="btn primary" href="#consultation">Request a consultation</a>
-        </div>
-      </aside>
-    </main>
-
-    <section id="pricing" class="pricing" aria-labelledby="pricing-heading">
-      <h2 id="pricing-heading">Pricing</h2>
-      <p style="color:var(--muted);margin-top:4px">Simple monthly plans. Upgrade any time. Annual & enterprise available on request.</p>
-
-      <div class="pricing-grid" role="list" aria-label="Pricing plans">
-        <div class="plan" role="listitem" aria-label="Bronze plan">
-          <div class="name">Bronze</div>
-          <div class="price">$300<span style="font-size:12px;color:var(--muted)">/mo</span></div>
-          <p style="color:var(--muted)">Starter workflows · basic reports · 1 integration</p>
-          <ul><li>3 workflow templates</li><li>Monthly performance report</li><li>Email support</li></ul>
-          <div class="select"><a class="btn primary" href="#consultation">Start Bronze</a></div>
-        </div>
-
-        <div class="plan popular" role="listitem" aria-label="Silver plan">
-          <div class="name">Silver — Popular</div>
-          <div class="price">$500<span style="font-size:12px;color:var(--muted)">/mo</span></div>
-          <p style="color:var(--muted)">Advanced templates · AI insights · 5 integrations · Priority email</p>
-          <ul><li>10 workflow templates</li><li>Weekly performance dashboard</li><li>One-on-one onboarding</li></ul>
-          <div class="select"><a class="btn primary" href="#consultation">Start Silver</a></div>
-        </div>
-
-        <div class="plan" role="listitem" aria-label="Gold plan">
-          <div class="name">Gold</div>
-          <div class="price">$1,000<span style="font-size:12px;color:var(--muted)">/mo</span></div>
-          <p style="color:var(--muted)">Enterprise features · priority support · custom onboarding</p>
-          <ul><li>Custom workflows</li><li>Daily KPI alerts</li><li>Dedicated success manager</li></ul>
-          <div class="select"><a class="btn primary" href="#consultation">Start Gold</a></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="faq" aria-labelledby="faq-heading">
-      <h3 id="faq-heading">FAQ</h3>
-      <div class="faq-item"><strong>How long to see results?</strong><p style="color:var(--muted);margin-top:6px">Most clients see measurable ROI in 30–90 days depending on plan and integrations.</p></div>
-      <div class="faq-item"><strong>Do you offer onboarding?</strong><p style="color:var(--muted);margin-top:6px">Yes — Silver includes onboarding; Gold includes a dedicated success manager and custom onboarding.</p></div>
-    </section>
-
-    <section id="about" style="margin-top:12px" aria-labelledby="about-heading">
-      <h3 id="about-heading">About BizMate</h3>
-      <p style="color:var(--muted)"><strong>Parita Amin</strong>, Founder &amp; CEO — Life Path 22 (Master Builder). Parita combines system-thinking with growth marketing to build predictable revenue engines for SMBs.</p>
-    </section>
-
-    <section id="consultation" class="consult" aria-labelledby="consultation-heading">
-      <h2 id="consultation-heading">Book your free 30‑minute consultation</h2>
-      <p style="color:var(--muted);margin-top:6px">Complete the short form and we'll contact you from <strong>growth@bizmte.com</strong> to schedule the consultation.</p>
-
-      <form id="consultForm" action="https://formspree.io/f/YOuR_FORM_ID" method="POST" novalidate>
-        <div class="field"><label for="name">Full name</label><input id="name" name="name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
-        <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone"></div>
-        <div class="field"><label for="plan">Select plan</label><select id="plan" name="plan"><option value="bronze">Bronze — $300/mo</option><option value="silver">Silver — $500/mo</option><option value="gold">Gold — $1000/mo</option></select></div>
-        <div class="field"><label for="message">Briefly describe your business</label><textarea id="message" name="message" rows="4"></textarea></div>
-
-        <input type="hidden" name="_subject" value="New consultation request">
-        <input type="hidden" name="to" value="growth@bizmte.com">
-
-        <button class="submit" type="submit">Request consultation</button>
-      </form>
-
-      <p style="margin-top:12px;color:var(--muted)">Prefer to pick a time? <a href="https://calendly.com/bizmate/consultation" target="_blank" rel="noopener">Schedule on our calendar</a>.</p>
-    </section>
-
-    <footer>
-      <div>© BizMate — Systems Built for Infinite Growth</div>
-      <div style="color:var(--muted)">Regina, SK • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
-    </footer>
-  </div>
-
-  <!-- Lottie player (optional visual) -->
-  <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
-  <script>
-    // Theme switcher
-    const items = document.querySelectorAll('.theme-item');
-    items.forEach(it => it.addEventListener('click', ()=>{
-      document.body.classList.remove('theme-stripe','theme-notion','theme-dark');
-      document.body.classList.add(it.dataset.theme);
-      items.forEach(x=>x.classList.remove('active'));
-      it.classList.add('active');
-      localStorage.setItem('bizmte_theme', it.dataset.theme);
-    }));
-    // restore theme
-    const saved = localStorage.getItem('bizmte_theme');
-    if(saved){ document.body.classList.remove('theme-stripe','theme-notion','theme-dark'); document.body.classList.add(saved); document.querySelectorAll('.theme-item').forEach(x=>x.classList.toggle('active', x.dataset.theme===saved)); }
-
-    // Lottie animation example (will silently fail if blocked)
-    try{
-      const container = document.createElement('div'); container.style.width='100%'; container.style.height='220px';
-      const visual = document.querySelector('.visual');
-      if(visual){ visual.appendChild(container);
-        lottie.loadAnimation({container,renderer:'svg',loop:true,autoplay:true,path:'https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json'});
-      }
-    }catch(e){ /* ignore */ }
-
-    // Smooth anchors + form UX
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{ const href=a.getAttribute('href'); if(href.startsWith('#')){ e.preventDefault(); const t=document.querySelector(href); if(t) t.scrollIntoView({behavior:'smooth', block:'start'}); } }));
-    document.getElementById('consultForm')?.addEventListener('submit', function(e){ const n=this.name.value.trim(); const em=this.email.value.trim(); if(!n||!em){ e.preventDefault(); alert('Please enter name and email to request the consultation.'); return false } const btn=this.querySelector('button[type=submit]'); if(btn){ btn.textContent='Sending…'; btn.disabled=true } });
-  </script>
+<script src="/site.js"></script>
 </body>
 </html>
