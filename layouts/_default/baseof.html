@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "seo.html" . }}
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    {{ partial "header.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>

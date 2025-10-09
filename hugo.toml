@@ -1,0 +1,21 @@
+baseURL = "https://www.bizmte.com/"
+languageCode = "en-us"
+title = "BizMate"
+theme = "bizmate-theme"
+enableGitInfo = true
+paginate = 10
+
+[params]
+  description = "BizMate – AI-assisted SaaS marketplace for small & medium businesses."
+  author = "BizMate"
+  email = "growth@bizmte.com"
+  github = "https://github.com/BizMateAI/bizmate.github.io"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+
+[permalinks]
+  post = "/:slug/"
