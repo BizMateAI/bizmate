@@ -1,0 +1,6 @@
+
+Contact: mailto:growth@bizmte.com
+Encryption: https://www.bizmte.com/pgp-key.txt
+Acknowledgments: https://www.bizmte.com/hall-of-fame
+Policy: https://www.bizmte.com/security
+Preferred-Languages: en
