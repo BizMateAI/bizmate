@@ -1,4 +1,4 @@
-
 User-agent: *
 Allow: /
 Sitemap: https://www.bizmte.com/sitemap.xml
+Host: www.bizmte.com
