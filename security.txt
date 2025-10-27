@@ -1,4 +1,0 @@
-Contact: mailto:security@bizmte.com
-Encryption: https://www.bizmte.com/security-policy.html
-Acknowledgments: https://www.bizmte.com/security-policy.html
-Preferred-Languages: en
