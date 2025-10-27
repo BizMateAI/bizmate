@@ -1,4 +1,4 @@
-Contact: mailto:growth@bizmte.com
-Encryption: https://www.bizmte.com/pgp-key.txt
+Contact: mailto:security@bizmte.com
+Encryption: https://www.bizmte.com/security-policy.html
+Acknowledgments: https://www.bizmte.com/security-policy.html
 Preferred-Languages: en
-Policy: https://www.bizmte.com/security-policy.html
