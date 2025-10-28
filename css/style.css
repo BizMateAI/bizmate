@@ -1,0 +1,27 @@
+/* Base & Reset */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
+body{line-height:1.6;background:#F5F5F7;color:#111;}
+.container{width:90%;max-width:1200px;margin:0 auto;}
+a{text-decoration:none;}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;position:sticky;top:0;background:#fff;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
+.header .logo img{width:150px;height:auto;max-width:100%;}
+header nav ul{display:flex;list-style:none;gap:20px;}
+header nav ul li a{color:#111;font-weight:500;transition:0.3s;}
+header nav ul li a:hover{color:#0E6C72;}
+
+/* Hero */
+.hero{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:100px 0;background:#0E6C72;color:#fff;}
+.hero-text{flex:1 1 500px;}
+.hero h1{font-size:3rem;margin-bottom:20px;line-height:1.2;}
+.hero p{font-size:1.2rem;margin-bottom:30px;}
+.btn-primary{background:#F0C808;color:#111;padding:15px 25px;border-radius:6px;font-weight:600;transition:0.3s;}
+.btn-primary:hover{background:#d9aa07;}
+.btn-secondary{background:transparent;border:2px solid #F0C808;color:#fff;padding:15px 25px;border-radius:6px;font-weight:600;transition:0.3s;margin-left:15px;}
+.btn-secondary:hover{background:#F0C808;color:#111;}
+.hero-image{flex:1 1 400px;transition:transform 0.1s linear;}
+
+/* Features, Packages, Testimonials, Contact, Footer styles ... */
+/* Copy styles from previous full index.html example */
+
