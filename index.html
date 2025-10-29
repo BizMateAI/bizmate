@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>BizMate — Systems Built for Infinite Growth</title>
-<meta name="description" content="BizMate helps SMBs grow faster with automated growth systems: GBP optimization, SEO, automation, dashboards, workflows and white-label platform services." />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BizMate — Systems Built for Infinite Growth</title>
+  <meta name="description" content="BizMate helps SMBs grow faster with automated growth systems: GBP optimization, SEO, automation, dashboards, workflows and white-label platform services." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
   :root{
     --bg:#071223;                /* deep navy background to match logo mood */
     --panel: rgba(255,255,255,0.03);
@@ -34,7 +34,7 @@
   #progressBar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--aqua));width:0;z-index:9999;box-shadow:0 2px 12px rgba(0,0,0,0.5)}
 
   /* NAV */
-  nav{position:sticky;top:0;display:flex;justify-content:center;padding:14px 18px;z-index:60;background:linear-gradient(180deg, rgba(0,0,0,0.15), transparent)}
+  nav{position:sticky;top:0;display:flex;justify-content:center;padding:14px 18px;z-index:60;background:linear-gradient(180deg, rgba(0,0,0,0.12), transparent)}
   nav a{color:rgba(200,230,255,0.8);margin:0 18px;font-weight:600;text-decoration:none;transition:color .18s}
   nav a:hover{color:var(--aqua)}
 
@@ -65,7 +65,8 @@
   /* logo */
   .logo {width:220px;height:auto;display:block;flex:0 0 auto}
   .hero-text {max-width:760px}
-  .hero-text .tagline{font-size:20px;color:var(--aqua);margin-bottom:8px}
+  .hero-text .headline{font-size:28px;color:var(--white);font-weight:700;margin-bottom:6px}
+  .hero-text .tagline{font-size:18px;color:var(--aqua);margin-bottom:8px}
   .hero-text .tagline span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
   .hero-text p{margin-top:10px;color:var(--muted);font-size:15px;line-height:1.6}
 
@@ -98,9 +99,8 @@
   .testimonial{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);font-style:italic;color:var(--muted)}
   .testimonial strong{display:block;margin-top:12px;color:var(--white)}
 
-  /* CONTACT: calendars */
+  /* CONTACT: calendars (exact embed container) */
   .calendly-embed{margin:50px auto;max-width:600px;}
-  /* keep styles minimal for widget; container uses card style */
   .calendly-container{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 16px 50px rgba(2,6,23,0.6)}
 
   /* FOOTER */
@@ -113,7 +113,7 @@
     .dashboard-mock{display:none}
     header{height:auto;padding:56px 18px}
   }
-</style>
+  </style>
 </head>
 <body>
 
@@ -133,12 +133,13 @@
     <div class="floating-bg" aria-hidden="true"></div>
 
     <div class="hero-wrap" role="region" aria-label="Hero content">
-      <!-- Use the attached logo file. Put Dark BizMate.png in same folder as this HTML -->
-      <img src="logo.png" alt="BizMate logo" class="logo" />
+      <!-- Use the uploaded logo file. Put Dark BizMate.png next to this file (or update src path) -->
+      <img src="Dark BizMate.png" alt="BizMate logo" class="logo" />
 
       <div class="hero-text">
-        <div class="tagline">Systems Built for <span>Infinite Growth</span></div>
-        <p>Automate Google Business, reviews, SEO, and workflows in one single growth system — tailored for SMBs who want predictable, measurable results.</p>
+        <div class="headline">Systems Built for <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700">Infinite Growth</span></div>
+        <div class="tagline">Automate Google Business, reviews, SEO, and workflows in one single growth system.</div>
+        <p>We build predictable, measurable growth systems for SMBs: fast GBP wins, review automation, conversion-first microsites, and dashboards that keep your team accountable.</p>
       </div>
     </div>
 
@@ -162,7 +163,7 @@
 
       <div class="card" role="listitem">
         <h3>Review & Reputation Automation</h3>
-        <p>Automated review requests, templated responses, reputation alerts, and leaderboard dashboards to build trust and stars.</p>
+        <p>Automated review requests, templated responses, reputation alerts, and leaderboard dashboards to build trust and star ratings.</p>
       </div>
 
       <div class="card" role="listitem">
@@ -259,7 +260,7 @@
     </div>
   </section>
 
-  <!-- CONTACT / CALENDLY (as you specified) -->
+  <!-- CONTACT / CALENDLY -->
   <section id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title">Book a Free Consultation</h2>
     <div class="calendly-embed">
@@ -280,7 +281,7 @@
     document.getElementById('progressBar').style.width = scrolled + '%';
   });
 
-  // Reveal testimonials on scroll
+  // Reveal testimonials on scroll (simple)
   const tNodes = document.querySelectorAll('.testimonial');
   function revealTestimonials(){
     const trigger = window.innerHeight;
