@@ -1,185 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BizMate – Systems Built for Infinite Growth</title>
-<meta name="description" content="BizMate helps SMBs grow faster with automated growth systems, Google Business Profile optimization, SEO, dashboards, and workflow automation. Book your free consultation today.">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BizMate — Systems Built for Infinite Growth</title>
+<meta name="description" content="BizMate helps SMBs grow faster with automated growth systems: GBP optimization, SEO, automation, dashboards, workflows and white-label platform services." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* RESET */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Roboto',sans-serif; line-height:1.6; background:#0F172A; color:#CBD5E1; scroll-behavior:smooth;}
-a {text-decoration:none; color:inherit;}
-button, .button {cursor:pointer;}
+  :root{
+    --bg:#071223;                /* deep navy background to match logo mood */
+    --panel: rgba(255,255,255,0.03);
+    --muted:#94A7BF;
+    --white:#E6F4FF;
+    --blue:#1D4ED8;              /* logo blue */
+    --aqua:#0EA5E9;              /* logo aqua */
+    --green:#2ECC71;             /* logo-accent green (arrow) */
+    --grad: linear-gradient(135deg,var(--blue),var(--aqua));
+    --card-radius:16px;
+  }
 
-/* SCROLL PROGRESS */
-#progressBar {position:fixed; top:0; left:0; height:4px; background:linear-gradient(90deg,#1D4ED8,#0EA5E9); width:0%; z-index:1001; transition:0.1s;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    background:var(--bg);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
 
-/* NAVIGATION */
-nav {position:sticky; top:0; background:#0F172A; display:flex; justify-content:center; padding:15px 0; z-index:999;}
-nav a {margin:0 20px; color:#60A5FA; font-weight:500; transition:0.3s;}
-nav a:hover {color:#1D4ED8;}
-.sticky-cta {position:fixed; bottom:20px; right:20px; background:linear-gradient(135deg,#1D4ED8,#0EA5E9); color:white; padding:15px 25px; border-radius:50px; font-weight:700; box-shadow:0 4px 20px rgba(0,0,0,0.4); transition:0.3s; z-index:1000;}
-.sticky-cta:hover {background:linear-gradient(135deg,#0EA5E9,#1D4ED8);}
+  /* progress bar */
+  #progressBar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--aqua));width:0;z-index:9999;box-shadow:0 2px 12px rgba(0,0,0,0.5)}
 
-/* HERO */
-header {background:linear-gradient(135deg,#1D4ED8,#0EA5E9); color:white; text-align:center; padding:140px 20px 100px; position:relative; overflow:hidden; border-radius:0 0 40px 40px;}
-header h1 {font-size:3rem; font-weight:700; margin-bottom:20px; animation:fadeInDown 1s ease forwards; opacity:0;}
-header p {font-size:1.3em; margin-bottom:30px; max-width:700px; margin:auto; animation:fadeInUp 1s ease 0.5s forwards; opacity:0;}
+  /* NAV */
+  nav{position:sticky;top:0;display:flex;justify-content:center;padding:14px 18px;z-index:60;background:linear-gradient(180deg, rgba(0,0,0,0.15), transparent)}
+  nav a{color:rgba(200,230,255,0.8);margin:0 18px;font-weight:600;text-decoration:none;transition:color .18s}
+  nav a:hover{color:var(--aqua)}
 
-/* ANIMATIONS */
-@keyframes fadeInDown {from {opacity:0; transform:translateY(-30px);} to {opacity:1; transform:translateY(0);}}
-@keyframes fadeInUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
-@keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+  /* sticky CTA */
+  .sticky-cta{
+    position:fixed;right:22px;bottom:22px;padding:12px 18px;border-radius:999px;background:var(--grad);color:white;font-weight:700;z-index:100;
+    box-shadow:0 14px 40px rgba(10,30,60,0.6);text-decoration:none;
+  }
+  .sticky-cta:hover{transform:translateY(-3px)}
 
-/* SECTIONS */
-section {max-width:1200px; margin:auto; padding:80px 20px;}
-h2 {text-align:center; color:#60A5FA; font-size:2.5rem; margin-bottom:40px;}
+  /* HERO (floating) */
+  header{position:relative;height:86vh;min-height:520px;display:flex;align-items:center;justify-content:center;padding:28px;overflow:hidden}
+  .floating-bg{
+    position:absolute;inset:0;background:
+      radial-gradient(circle at 15% 30%, rgba(29,78,216,0.14), transparent 12%),
+      radial-gradient(circle at 85% 70%, rgba(46,204,113,0.08), transparent 14%),
+      linear-gradient(180deg, rgba(5,12,26,0.75), rgba(6,10,20,0.5));
+    filter:blur(36px);z-index:0;animation:bgFloat 18s ease-in-out infinite;
+  }
+  @keyframes bgFloat{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
 
-/* FEATURES/SERVICES */
-.features {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
-.feature {background:#1E293B; padding:40px 30px; border-radius:20px; text-align:center; display:flex; flex-direction:column; justify-content:flex-start; transition:0.3s; box-shadow:0 6px 25px rgba(0,0,0,0.5);}
-.feature:hover {transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,0.6);}
-.feature h3 {color:#0EA5E9; margin-bottom:15px; font-size:1.5rem;}
-.feature p {font-size:1.05rem; line-height:1.6; color:#CBD5E1;}
+  .hero-wrap{
+    position:relative;z-index:2;display:flex;gap:32px;align-items:center;max-width:1180px;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:20px;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px);
+    box-shadow: 0 30px 80px rgba(2,6,23,0.7);
+  }
 
-/* PACKAGES */
-.packages {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin-top:40px;}
-.package {background:#1E293B; border-radius:20px; padding:40px 30px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.5); transition:0.3s; display:flex; flex-direction:column; justify-content:flex-start; height:100%; overflow:hidden;}
-.package:hover {transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,0.6);}
-.package h3 {color:#0EA5E9; margin-bottom:20px; font-size:1.6rem;}
-.package .price {font-size:2rem; font-weight:700; color:#FFFFFF; margin-bottom:15px; position:relative; display:inline-block;}
-.package .price::after {content:""; position:absolute; left:0; bottom:-5px; width:100%; height:3px; background:linear-gradient(135deg,#0EA5E9,#1D4ED8); border-radius:2px;}
-.package p {margin:10px 0; font-size:1.05rem; line-height:1.5; flex:1;}
-.package .button {margin-top:20px; display:inline-block; padding:15px 30px; background:linear-gradient(135deg,#1D4ED8,#0EA5E9); color:white; border-radius:12px; font-weight:700; transition:0.3s;}
-.package .button:hover {background:linear-gradient(135deg,#0EA5E9,#1D4ED8);}
+  /* logo */
+  .logo {width:220px;height:auto;display:block;flex:0 0 auto}
+  .hero-text {max-width:760px}
+  .hero-text .tagline{font-size:20px;color:var(--aqua);margin-bottom:8px}
+  .hero-text .tagline span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+  .hero-text p{margin-top:10px;color:var(--muted);font-size:15px;line-height:1.6}
 
-/* TESTIMONIALS */
-.testimonials {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:40px;}
-.testimonial {background:#1E293B; padding:35px; border-radius:20px; box-shadow:0 6px 25px rgba(0,0,0,0.5); font-style:italic; opacity:0; transform:translateY(20px); transition:0.6s;}
-.testimonial.show {opacity:1; transform:translateY(0);}
-.testimonial h4 {color:#0EA5E9; margin-top:15px; font-weight:700;}
+  /* subtle dashboard mockup (faint, behind) */
+  .dashboard-mock{position:absolute;right:6%;bottom:6%;width:460px;max-width:46%;opacity:0.12;border-radius:14px;filter:blur(2px);z-index:1}
 
-/* CONTACT / CALENDLY */
-.calendly-embed {margin:50px auto; max-width:600px;}
+  /* SECTIONS */
+  section{max-width:1150px;margin:84px auto;padding:0 20px}
+  h2{color:var(--aqua);font-size:20px;text-align:center;margin-bottom:18px}
 
-/* FOOTER */
-footer {background:#111827; text-align:center; padding:40px 20px; margin-top:60px; font-size:0.95em; color:#CBD5E1;}
-footer a {color:#60A5FA; transition:0.3s;}
-footer a:hover {color:#0EA5E9;}
+  /* CARDS (services/testimonials) */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border-radius:var(--card-radius);padding:22px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 14px 40px rgba(2,6,23,0.6);display:flex;flex-direction:column;min-height:170px}
+  .card h3{margin-bottom:8px;color:var(--white);font-size:17px}
+  .card p{color:var(--muted);font-size:14px;line-height:1.55}
 
-/* RESPONSIVE */
-@media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1.1rem;} }
+  /* PACKAGES (premium ribbon style) */
+  .packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:stretch}
+  .price-card{background:linear-gradient(180deg, rgba(255,255,255,0.014), rgba(255,255,255,0.008));border-radius:14px;padding:26px;border:1px solid rgba(96,165,250,0.06);display:flex;flex-direction:column;justify-content:space-between;min-height:320px;box-shadow:0 18px 50px rgba(2,6,23,0.7)}
+  .price-card h3{color:var(--white);margin:0 0 10px;font-size:18px}
+  .price-amount{font-size:26px;color:var(--aqua);font-weight:700;margin-bottom:10px}
+  .price-features{margin-top:8px;flex:1}
+  .price-features li{color:var(--muted);margin:10px 0;font-size:14px}
+  .price-cta{margin-top:18px}
+  .btn-primary{display:inline-block;padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,var(--blue),var(--aqua));color:#fff;font-weight:700;text-decoration:none;box-shadow:0 12px 40px rgba(10,80,200,0.12)}
+  .btn-primary:hover{transform:translateY(-4px)}
+
+  /* TESTIMONIALS */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .testimonial{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);font-style:italic;color:var(--muted)}
+  .testimonial strong{display:block;margin-top:12px;color:var(--white)}
+
+  /* CONTACT: calendars */
+  .calendly-embed{margin:50px auto;max-width:600px;}
+  /* keep styles minimal for widget; container uses card style */
+  .calendly-container{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 16px 50px rgba(2,6,23,0.6)}
+
+  /* FOOTER */
+  footer{margin:80px auto 36px;text-align:center;color:var(--muted);font-size:13px;padding:18px 12px;border-top:1px solid rgba(255,255,255,0.02)}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .hero-wrap{flex-direction:column;align-items:center;padding:18px}
+    .logo{width:160px}
+    .dashboard-mock{display:none}
+    header{height:auto;padding:56px 18px}
+  }
 </style>
 </head>
 <body>
 
-<div id="progressBar"></div>
+  <div id="progressBar" aria-hidden="true"></div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#packages">Packages</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Book</a>
-</nav>
+  <nav role="navigation" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Book</a>
+  </nav>
 
-<a href="#contact" class="sticky-cta">Book Consultation</a>
+  <a class="sticky-cta" href="#contact" aria-label="Book consultation">Book Consultation</a>
 
-<header>
-  <h1>BizMate</h1>
-  <p>Systems Built for Infinite Growth — Automated Growth Systems, SEO, Dashboards, and Workflow Automation for SMBs</p>
-</header>
+  <!-- HERO -->
+  <header role="banner" aria-label="BizMate hero">
+    <div class="floating-bg" aria-hidden="true"></div>
 
-<section id="about">
-<h2>About BizMate</h2>
-<p>BizMate helps small and medium businesses grow faster with fully systemized digital growth solutions. We combine <strong>Google Business Profile optimization, SEO, branding, workflow automation, and custom dashboards</strong> into one measurable growth system. Gain more leads, higher visibility, and scalable growth — all automated, trackable, and location-independent.</p>
-</section>
+    <div class="hero-wrap" role="region" aria-label="Hero content">
+      <!-- Use the attached logo file. Put Dark BizMate.png in same folder as this HTML -->
+      <img src="logo.png" alt="BizMate logo" class="logo" />
 
-<section id="services">
-<h2>Our Services</h2>
-<div class="features">
-  <div class="feature"><h3>Growth System Setup</h3><p>Complete systems that attract customers, automate workflows, and track measurable results.</p></div>
-  <div class="feature"><h3>Consulting & Strategy</h3><p>Expert guidance to design, implement, and scale growth systems using SEO, automation, dashboards, and brand strategy.</p></div>
-  <div class="feature"><h3>Local Growth Acceleration</h3><p>Increase visibility, leads, and conversions locally with Google Maps optimization, review management, and automation workflows.</p></div>
-  <div class="feature"><h3>Digital Presence Optimization</h3><p>Integrate website, SEO, GBP, and social profiles into one unified, automated growth system.</p></div>
-</div>
-</section>
+      <div class="hero-text">
+        <div class="tagline">Systems Built for <span>Infinite Growth</span></div>
+        <p>Automate Google Business, reviews, SEO, and workflows in one single growth system — tailored for SMBs who want predictable, measurable results.</p>
+      </div>
+    </div>
 
-<section id="packages">
-<h2>Service Packages</h2>
-<div class="packages">
-<div class="package">
-<h3>Launch System</h3>
-<p class="price">$899</p>
-<p>Optional Care Plan: $49/mo</p>
-<p>Set up your business online in 30 days. GBP, 1-page microsite, SEO, and review systems.</p>
-<a href="#contact" class="button">Book Now</a>
-</div>
-<div class="package">
-<h3>Growth System</h3>
-<p class="price">Setup $1,499</p>
-<p>Monthly $199</p>
-<p>Automate leads, reviews, dashboards, and workflows. Perfect for established SMBs.</p>
-<a href="#contact" class="button">Book Now</a>
-</div>
-<div class="package">
-<h3>Scale System</h3>
-<p class="price">Setup $2,999</p>
-<p>Monthly $499–$799</p>
-<p>Unified multi-location dashboards, advanced automation, AI insights, and CRM integration.</p>
-<a href="#contact" class="button">Book Now</a>
-</div>
-<div class="package">
-<h3>Infinity System</h3>
-<p class="price">Annual $15k–$30k</p>
-<p>APIs, white-label dashboard, partner/reseller access, dedicated account manager.</p>
-<p>Enterprise-grade solution for agencies, franchises, and multi-location SMBs.</p>
-<a href="#contact" class="button">Book Now</a>
-</div>
-</div>
-</section>
+    <!-- faint dashboard mockup behind hero; replace with your screenshot for more realism -->
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d7?auto=format&fit=crop&w=1600&q=80" alt="" class="dashboard-mock" aria-hidden="true" />
+  </header>
 
-<section id="testimonials">
-<h2>Testimonials</h2>
-<div class="testimonials">
-<div class="testimonial"><p>"BizMate transformed our local business. Automated systems saved hours every week!"</p><h4>- Alex R.</h4></div>
-<div class="testimonial"><p>"Professional, reliable, and scalable. Highly recommend for SMBs wanting real growth."</p><h4>- Sarah M.</h4></div>
-<div class="testimonial"><p>"We now track all KPIs in one dashboard. Growth has never been easier."</p><h4>- Mike D.</h4></div>
-</div>
-</section>
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Core Services</h2>
+    <div class="cards" role="list">
+      <div class="card" role="listitem">
+        <h3>Google Business Profile Optimization</h3>
+        <p>Claim & optimize GBP with keyword-driven descriptions, service entries, photo strategy, and scheduled posts to increase Maps visibility.</p>
+      </div>
 
-<section id="contact">
-<h2>Book a Free Consultation</h2>
-<div class="calendly-embed">
-<div class="calendly-inline-widget" data-url="https://calendly.com/bizmate-growth/30-minute-consultation" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-</div>
-</section>
+      <div class="card" role="listitem">
+        <h3>Local SEO & On-site Optimization</h3>
+        <p>Schema markup, page speed, local landing pages and technical SEO to improve organic rankings and conversion rates.</p>
+      </div>
 
-<footer>
-<p>© 2025 BizMate. All rights reserved. | Contact: +1 (639) 382-0382 | <a href="mailto:growth@bizmte.com">growth@bizmte.com</a></p>
-</footer>
+      <div class="card" role="listitem">
+        <h3>Review & Reputation Automation</h3>
+        <p>Automated review requests, templated responses, reputation alerts, and leaderboard dashboards to build trust and stars.</p>
+      </div>
+
+      <div class="card" role="listitem">
+        <h3>Dashboards & Reporting</h3>
+        <p>Single-pane dashboard consolidating GBP, analytics, bookings and reviews with KPI monitoring and weekly snapshots.</p>
+      </div>
+
+      <div class="card" role="listitem">
+        <h3>Workflow Automation</h3>
+        <p>Automated lead routing, appointment reminders, follow-up sequences and internal ops automations that save time and reduce errors.</p>
+      </div>
+
+      <div class="card" role="listitem">
+        <h3>Website & eCommerce Integration</h3>
+        <p>Conversion-first microsites, landing pages or e-commerce store integrations with payment and product sync.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" aria-labelledby="packages-title">
+    <h2 id="packages-title">Service Packages</h2>
+
+    <div class="packages-grid" role="list">
+      <!-- Launch -->
+      <div class="price-card" role="listitem" aria-label="Launch System">
+        <div>
+          <h3>Launch System</h3>
+          <div class="price-amount">$899 — one-time</div>
+          <ul class="price-features">
+            <li>GBP setup & optimization (listing, services, photos)</li>
+            <li>1-page microsite + local SEO baseline</li>
+            <li>Review request flow & onboarding checklist</li>
+            <li>30-day launch support</li>
+          </ul>
+        </div>
+        <div class="price-cta"><a class="btn-primary" href="#contact">Book Launch</a></div>
+      </div>
+
+      <!-- Growth -->
+      <div class="price-card" role="listitem" aria-label="Growth System">
+        <div>
+          <h3>Growth System</h3>
+          <div class="price-amount">$1,499 setup + $199/mo</div>
+          <ul class="price-features">
+            <li>Everything in Launch</li>
+            <li>AI review automation & GBP posting</li>
+            <li>Monthly insights dashboard & CRM flow</li>
+            <li>3 automation workflows (lead routing, follow-up)</li>
+          </ul>
+        </div>
+        <div class="price-cta"><a class="btn-primary" href="#contact">Book Growth</a></div>
+      </div>
+
+      <!-- Scale -->
+      <div class="price-card" role="listitem" aria-label="Scale System">
+        <div>
+          <h3>Scale System</h3>
+          <div class="price-amount">$2,999 setup + $499–$799/mo</div>
+          <ul class="price-features">
+            <li>Everything in Growth</li>
+            <li>Multi-location dashboards & aggregated benchmarks</li>
+            <li>Full CRM integration & SLA automation</li>
+            <li>Quarterly strategy & optimization sprints</li>
+          </ul>
+        </div>
+        <div class="price-cta"><a class="btn-primary" href="#contact">Book Scale</a></div>
+      </div>
+
+      <!-- Infinity -->
+      <div class="price-card" role="listitem" aria-label="Infinity System">
+        <div>
+          <h3>Infinity System</h3>
+          <div class="price-amount">$15,000–$30,000 / yr</div>
+          <ul class="price-features">
+            <li>White-label platform, API access & reseller dashboard</li>
+            <li>Dedicated account & automation engineer</li>
+            <li>Custom integrations, SSO & performance SLAs</li>
+            <li>Partner listing & priority roadmap</li>
+          </ul>
+        </div>
+        <div class="price-cta"><a class="btn-primary" href="#contact">Contact Sales</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">What clients say</h2>
+    <div class="test-grid" role="list">
+      <div class="testimonial" role="listitem"><p>"BizMate helped our bakery increase local leads by 40% in 30 days."</p><strong>— Sarah T., Bakery</strong></div>
+      <div class="testimonial" role="listitem"><p>"The Growth System transformed our workflows and saved hours every week."</p><strong>— Raj P., Auto Repair</strong></div>
+      <div class="testimonial" role="listitem"><p>"We now have one dashboard for all channels. It changed the way we operate."</p><strong>— Emily K., Salon</strong></div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CALENDLY (as you specified) -->
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Book a Free Consultation</h2>
+    <div class="calendly-embed">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/bizmate-growth/30-minute-consultation" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <p>© 2025 BizMate — Systems Built for Infinite Growth • Parita Amin • <a href="mailto:hello@bizmte.com">hello@bizmte.com</a></p>
+  </footer>
 
 <script>
-window.onscroll = function(){
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  document.getElementById("progressBar").style.width = (winScroll / height * 100) + "%";
-};
-
-const testimonials = document.querySelectorAll('.testimonial');
-function showTestimonials(){
-  let trigger = window.innerHeight;
-  testimonials.forEach(t => {
-    let top = t.getBoundingClientRect().top;
-    if(top < trigger - 50){ t.classList.add('show'); }
+  // Scroll progress bar
+  window.addEventListener('scroll', function(){
+    const doc = document.documentElement;
+    const scrolled = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
   });
-}
-window.addEventListener('scroll', showTestimonials);
-window.addEventListener('load', showTestimonials);
-</script>
 
+  // Reveal testimonials on scroll
+  const tNodes = document.querySelectorAll('.testimonial');
+  function revealTestimonials(){
+    const trigger = window.innerHeight;
+    tNodes.forEach(n => {
+      const top = n.getBoundingClientRect().top;
+      if(top < trigger - 50) n.style.opacity = 1, n.style.transform = 'translateY(0)', n.style.transition = 'all .6s ease';
+    });
+  }
+  window.addEventListener('scroll', revealTestimonials);
+  window.addEventListener('load', revealTestimonials);
+</script>
 </body>
 </html>
